@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Michael Huynh">
-<meta name="dcterms.date" content="2023-11-13">
+<meta name="dcterms.date" content="2023-11-12">
 
 <title>Homework 7 - Creating a resume database</title>
 <style>
@@ -3363,7 +3363,7 @@ z-index: 1000;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 13, 2023</p>
+      <p class="date">November 12, 2023</p>
     </div>
   </div>
   
@@ -3374,14 +3374,14 @@ z-index: 1000;
 </header>
 
 <p>This document is linked to a SQL database. Query commands are run in Python to retrieve data from the linked database.</p>
-<p>GITHUB URL: &lt;your URL goes here!&gt;</p>
+<p>GITHUB URL: https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-huynhmx.git</p>
 <section id="overview-and-description" class="level2">
 <h2 class="anchored" data-anchor-id="overview-and-description">Overview and description</h2>
-<p>(briefly describe the project and the database)</p>
+<p>This database represent a company wide resume capturing the collective skills of employee within the company. The famous sensei of Kill-Bill fame will be able to use this database to find people with certain skills to fill specific roles.</p>
 </section>
 <section id="crows-foot-diagram" class="level2">
 <h2 class="anchored" data-anchor-id="crows-foot-diagram">Crows-foot diagram</h2>
-<p>People and peopleskills are a many to many relationship because, A person can have many skills and a skill can have many people. People and roles are a many to many relationship because, A person can roles and a roles have many people. Roles and peopleroles are also a many to many relationship, a</p>
+<p>People and peopleskills are a many to many relationship, because a person can have many skills and a skill can have many people. People and roles are a many to many relationship, because a person can roles and a roles have many people. Roles and peopleroles are also a many to many relationship, because a role can be filled by many peopleroles and a peoplerole can have many roles. Finally, Skills and peopleskills also have a many to many relationship, because skills can be ascccoated with many peopleskills and peopleskill can have multiple skills</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -3703,7 +3703,6 @@ date_acquired date
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ss">select * from people</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>

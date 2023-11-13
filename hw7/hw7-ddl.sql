@@ -100,7 +100,11 @@ insert into people (people_id, first_name, people_last_name, email, linkedin_url
 (3, 'Carol', 'Garcia', 'carol.garcia@example.com', 'https://linkedin.com/in/carol-garcia', 'https://example.com/headshots/carol-garcia.jpg', 'carol-garcia#1234', 'Carol Garcia is a CS student at MIT. She is interested in pursuing a career in cybersecurity.', '2023-06-16'),
 (4, 'David', 'Miller', 'david.miller@example.com', 'https://linkedin.com/in/david-miller', 'https://example.com/headshots/david-miller.jpg', 'david-miller#1234', 'David Miller is a CS student at Caltech. He is interested in pursuing a career in computer graphics.', '2023-05-27'),
 (5, 'Emily', 'Davis', 'emily.davis@example.com', 'https://linkedin.com/in/emily-davis', 'https://example.com/headshots/emily-davis.jpg', 'emily-davis#1234', 'Emily Davis is a CS student at Yale University. She is interested in pursuing a career in data science.', '2023-04-18'),
-(6, 'Frank', 'Brown', 'frank.brown@example.com', 'https://linkedin.com/in/frank-brown', 'https://example.com/headshots/frank-brown.jpg', 'frank-brown#1234', 'Frank Brown is a CS student at Princeton University. He is interested in pursuing a career in artificial intelligence.', '2023-03-29');
+(6, 'Frank', 'Brown', 'frank.brown@example.com', 'https://linkedin.com/in/frank-brown', 'https://example.com/headshots/frank-brown.jpg', 'frank-brown#1234', 'Frank Brown is a CS student at Princeton University. He is interested in pursuing a career in artificial intelligence.', '2023-03-29')
+(7, 'Grace', 'Anderson', 'grace.anderson@example.com', 'https://linkedin.com/in/grace-anderson', 'https://example.com/headshots/grace-anderson.jpg', 'grace-anderson#1234', 'Grace Anderson is a CS student at Columbia University. She is interested in pursuing a career in software development.', '2023-02-10'),
+(8, 'Henry', 'Smith', 'henry.smith@example.com', 'https://linkedin.com/in/henry-smith', 'https://example.com/headshots/henry-smith.jpg', 'henry-smith#1234', 'Henry Smith is a CS student at Stanford University. He is passionate about cybersecurity and aims to work in the field of ethical hacking.', '2023-01-21'),
+(9, 'Isabel', 'Lopez', 'isabel.lopez@example.com', 'https://linkedin.com/in/isabel-lopez', 'https://example.com/headshots/isabel-lopez.jpg', 'isabel-lopez#1234', 'Isabel Lopez is a CS student at MIT. She has a keen interest in computer networks and aspires to contribute to the development of secure communication protocols.', '2022-12-14'),
+(10, 'Jack', 'Taylor', 'jack.taylor@example.com', 'https://linkedin.com/in/jack-taylor', 'https://example.com/headshots/jack-taylor.jpg', 'jack-taylor#1234', 'Jack Taylor is a CS student at Harvard University. He is fascinated by the field of artificial intelligence and aims to specialize in natural language processing.', '2022-11-25');
 
 
 select * from people;
@@ -151,87 +155,6 @@ insert into peopleskills (people_id, skills_id) values
     (6, 2),
     (6, 3),
     (6, 4);
-
- 
-insert into peopleskills (people_id, skills_id) values
-(6,1);
-
-select * from peopleskills;
-select count(*) from peopleskills;
-
-
-
-
-
-# delete from skills where id=3;
-
-SELECT
-   name,
-   tag
-    from 
-    skills a
-    left join peopleskills b on (a.id=b.skills_id)
-    WHERE
-    skills_id is NULL
-    ;
-
-
-
-    
-
-    SELECT
-    name,
-    count(*)
-from
-    peopleskills a
-    inner join people b on (a.people_id=b.people_id)
-    inner join skills c on(a.skills_id=c.id)
-    GROUP BY
-    name
-    ;
-
-
-SELECT
-    people_last_name,
-    name,
-    tag
-from
-    peopleskills a
-inner join people b on(a.people_id=b.people_id)
-inner join skills c on(a.skills_id=c.id)
-WHERE
-    people_last_name='Johnson'
-    ORDER BY
-    name,
-    people_last_name
-    ;
-
-
-SELECT
-    c.role_id,
-    c.name AS role_name
-from
-    roles c left join peopleroles b ON c.role_id = b.role_id
-WHERE
-    b.role_id IS NULL;
-
-
-
-SELECT
-    a.first_name,
-    a.people_last_name,
-    c.name AS role_name,
-    s.name AS skill_name
-FROM
-    people a
-    inner join peopleroles b ON a.people_id = b.people_id
-    inner join roles c ON b.role_id = c.role_id
-    left join peopleskills d ON a.people_id = d.people_id
-    left join skills s ON d.skills_id = s.id
-WHERE
-    c.name = 'Boss'
-ORDER BY
-    a.people_last_name, s.name;
 
 
 
@@ -305,6 +228,12 @@ insert into peopleroles(people_id, role_id) values
    (4, 3),
    (5, 3),
    (6, 2),
-   (6, 1);
+   (6, 1),
+   (7, 1),
+   (8, 1),
+   (8, 4),
+   (9, 2),
+   (10, 2),
+   (10, 1);
 
    SELECT * from peopleroles;
